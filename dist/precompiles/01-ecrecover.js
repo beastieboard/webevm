@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.precompile01 = precompile01;
+exports.precompile01 = void 0;
 const util_1 = require("@ethereumjs/util");
 const evm_1 = require("../evm");
 function precompile01(opts) {
@@ -38,4 +38,5 @@ function precompile01(opts) {
         returnValue: (0, util_1.setLengthLeft)((0, util_1.publicToAddress)(publicKey), 32),
     };
 }
+exports.precompile01 = precompile01;
 //# sourceMappingURL=01-ecrecover.js.map

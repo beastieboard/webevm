@@ -1,13 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.gasDiscountPairs = void 0;
-exports.BLS12_381_FromG1Point = BLS12_381_FromG1Point;
-exports.BLS12_381_FromG2Point = BLS12_381_FromG2Point;
-exports.BLS12_381_ToFp2Point = BLS12_381_ToFp2Point;
-exports.BLS12_381_ToFpPoint = BLS12_381_ToFpPoint;
-exports.BLS12_381_ToFrPoint = BLS12_381_ToFrPoint;
-exports.BLS12_381_ToG1Point = BLS12_381_ToG1Point;
-exports.BLS12_381_ToG2Point = BLS12_381_ToG2Point;
+exports.BLS12_381_ToG2Point = exports.BLS12_381_ToG1Point = exports.BLS12_381_ToFrPoint = exports.BLS12_381_ToFpPoint = exports.BLS12_381_ToFp2Point = exports.BLS12_381_FromG2Point = exports.BLS12_381_FromG1Point = exports.gasDiscountPairs = void 0;
 const util_1 = require("@ethereumjs/util");
 const exceptions_1 = require("../../exceptions");
 // base field modulus as described in the EIP
@@ -172,6 +165,7 @@ function BLS12_381_ToG1Point(input, mcl) {
     }
     return G1;
 }
+exports.BLS12_381_ToG1Point = BLS12_381_ToG1Point;
 // input: a mcl G1 point
 // output: a 128-byte Buffer
 function BLS12_381_FromG1Point(input) {
@@ -189,6 +183,7 @@ function BLS12_381_FromG1Point(input) {
     const yBuffer = Buffer.concat([Buffer.alloc(64 - yval.length / 2, 0), Buffer.from(yval, 'hex')]);
     return Buffer.concat([xBuffer, yBuffer]);
 }
+exports.BLS12_381_FromG1Point = BLS12_381_FromG1Point;
 // convert an input Buffer to a mcl G2 point
 // this does /NOT/ do any input checks. the input Buffer needs to be of length 256
 function BLS12_381_ToG2Point(input, mcl) {
@@ -225,6 +220,7 @@ function BLS12_381_ToG2Point(input, mcl) {
     }
     return mclPoint;
 }
+exports.BLS12_381_ToG2Point = BLS12_381_ToG2Point;
 // input: a mcl G2 point
 // output: a 256-byte Buffer
 function BLS12_381_FromG2Point(input) {
@@ -246,6 +242,7 @@ function BLS12_381_FromG2Point(input) {
     const yBuffer2 = Buffer.concat([Buffer.alloc(64 - y_2.length / 2, 0), Buffer.from(y_2, 'hex')]);
     return Buffer.concat([xBuffer1, xBuffer2, yBuffer1, yBuffer2]);
 }
+exports.BLS12_381_FromG2Point = BLS12_381_FromG2Point;
 // input: a 32-byte hex scalar Buffer
 // output: a mcl Fr point
 function BLS12_381_ToFrPoint(input, mcl) {
@@ -254,6 +251,7 @@ function BLS12_381_ToFrPoint(input, mcl) {
     Fr.setBigEndianMod(mclHex);
     return Fr;
 }
+exports.BLS12_381_ToFrPoint = BLS12_381_ToFrPoint;
 // input: a 64-byte buffer
 // output: a mcl Fp point
 function BLS12_381_ToFpPoint(fpCoordinate, mcl) {
@@ -265,6 +263,7 @@ function BLS12_381_ToFpPoint(fpCoordinate, mcl) {
     fp.setBigEndianMod(mcl.fromHexStr(fpCoordinate.toString('hex')));
     return fp;
 }
+exports.BLS12_381_ToFpPoint = BLS12_381_ToFpPoint;
 // input: two 64-byte buffers
 // output: a mcl Fp2 point
 function BLS12_381_ToFp2Point(fpXCoordinate, fpYCoordinate, mcl) {
@@ -284,4 +283,5 @@ function BLS12_381_ToFp2Point(fpXCoordinate, fpYCoordinate, mcl) {
     fp2.set_b(fp_y);
     return fp2;
 }
+exports.BLS12_381_ToFp2Point = BLS12_381_ToFp2Point;
 //# sourceMappingURL=bls12_381.js.map

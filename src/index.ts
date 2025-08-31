@@ -19,3 +19,5 @@ export {
   Message,
 }
 export { createWebEVM, LocalEEI } from './web'
+export { Address } from '@ethereumjs/util'
+

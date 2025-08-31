@@ -6,4 +6,5 @@ import { getActivePrecompiles } from './precompiles';
 import { EEIInterface, EVMInterface, EVMStateAccess, Log } from './types';
 export { EEIInterface, EVM, EvmError, EvmErrorMessage, EVMInterface, EVMResult, EVMStateAccess, ExecResult, getActivePrecompiles, InterpreterStep, Log, Message, };
 export { createWebEVM, LocalEEI } from './web';
+export { Address } from '@ethereumjs/util';
 //# sourceMappingURL=index.d.ts.map

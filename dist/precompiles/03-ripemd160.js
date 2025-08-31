@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.precompile03 = precompile03;
+exports.precompile03 = void 0;
 const util_1 = require("@ethereumjs/util");
 const ripemd160_1 = require("ethereum-cryptography/ripemd160");
 const evm_1 = require("../evm");
@@ -16,4 +16,5 @@ function precompile03(opts) {
         returnValue: (0, util_1.setLengthLeft)((0, util_1.toBuffer)((0, ripemd160_1.ripemd160)(data)), 32),
     };
 }
+exports.precompile03 = precompile03;
 //# sourceMappingURL=03-ripemd160.js.map

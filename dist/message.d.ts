@@ -1,3 +1,5 @@
+/// <reference types="node" />
+/// <reference types="node" />
 import { Address } from '@ethereumjs/util';
 import { PrecompileFunc } from './precompiles';
 interface MessageOpts {

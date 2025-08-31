@@ -1,23 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.setLengthLeftStorage = setLengthLeftStorage;
-exports.trap = trap;
-exports.addressToBuffer = addressToBuffer;
-exports.describeLocation = describeLocation;
-exports.divCeil = divCeil;
-exports.getDataSlice = getDataSlice;
-exports.getFullname = getFullname;
-exports.jumpIsValid = jumpIsValid;
-exports.jumpSubIsValid = jumpSubIsValid;
-exports.maxCallGas = maxCallGas;
-exports.subMemUsage = subMemUsage;
-exports.writeCallOutput = writeCallOutput;
-exports.updateSstoreGas = updateSstoreGas;
-exports.mod = mod;
-exports.fromTwos = fromTwos;
-exports.toTwos = toTwos;
-exports.abs = abs;
-exports.exponentation = exponentation;
+exports.exponentation = exports.abs = exports.toTwos = exports.fromTwos = exports.mod = exports.updateSstoreGas = exports.writeCallOutput = exports.subMemUsage = exports.maxCallGas = exports.jumpSubIsValid = exports.jumpIsValid = exports.getFullname = exports.getDataSlice = exports.divCeil = exports.describeLocation = exports.addressToBuffer = exports.trap = exports.setLengthLeftStorage = void 0;
 const common_1 = require("@ethereumjs/common");
 const util_1 = require("@ethereumjs/util");
 const keccak_1 = require("ethereum-cryptography/keccak");
@@ -38,6 +21,7 @@ function setLengthLeftStorage(value) {
         return (0, util_1.setLengthLeft)(value, 32);
     }
 }
+exports.setLengthLeftStorage = setLengthLeftStorage;
 /**
  * Wraps error message as EvmError
  */
@@ -45,6 +29,7 @@ function trap(err) {
     // TODO: facilitate extra data along with errors
     throw new exceptions_1.EvmError(err);
 }
+exports.trap = trap;
 /**
  * Converts bigint address (they're stored like this on the stack) to buffer address
  */
@@ -53,6 +38,7 @@ function addressToBuffer(address) {
         return address;
     return (0, util_1.setLengthLeft)((0, util_1.bigIntToBuffer)(address & MASK_160), 20);
 }
+exports.addressToBuffer = addressToBuffer;
 /**
  * Error message helper - generates location string
  */
@@ -62,6 +48,7 @@ function describeLocation(runState) {
     const pc = runState.programCounter - 1;
     return `${hash}/${address}:${pc}`;
 }
+exports.describeLocation = describeLocation;
 /**
  * Find Ceil(a / b)
  *
@@ -78,6 +65,7 @@ function divCeil(a, b) {
     // Round up
     return div < BigInt(0) ? div - BigInt(1) : div + BigInt(1);
 }
+exports.divCeil = divCeil;
 /**
  * Returns an overflow-safe slice of an array. It right-pads
  * the data with zeros to `length`.
@@ -96,6 +84,7 @@ function getDataSlice(data, offset, length) {
     data = (0, util_1.setLengthRight)(data, Number(length));
     return data;
 }
+exports.getDataSlice = getDataSlice;
 /**
  * Get full opcode name from its name and code.
  *
@@ -120,18 +109,21 @@ function getFullname(code, name) {
     }
     return name;
 }
+exports.getFullname = getFullname;
 /**
  * Checks if a jump is valid given a destination (defined as a 1 in the validJumps array)
  */
 function jumpIsValid(runState, dest) {
     return runState.validJumps[dest] === 1;
 }
+exports.jumpIsValid = jumpIsValid;
 /**
  * Checks if a jumpsub is valid given a destination (defined as a 2 in the validJumps array)
  */
 function jumpSubIsValid(runState, dest) {
     return runState.validJumps[dest] === 2;
 }
+exports.jumpSubIsValid = jumpSubIsValid;
 /**
  * Returns an overflow-safe slice of an array. It right-pads
  * the data with zeros to `length`.
@@ -149,6 +141,7 @@ function maxCallGas(gasLimit, gasLeft, runState, common) {
         return gasLimit;
     }
 }
+exports.maxCallGas = maxCallGas;
 /**
  * Subtracts the amount needed for memory usage from `runState.gasLeft`
  */
@@ -172,6 +165,7 @@ function subMemUsage(runState, offset, length, common) {
     runState.memoryWordCount = newMemoryWordCount;
     return cost;
 }
+exports.subMemUsage = subMemUsage;
 /**
  * Writes data returned by eei.call* methods to memory
  */
@@ -188,6 +182,7 @@ function writeCallOutput(runState, outOffset, outLength) {
         runState.memory.write(memOffset, dataLength, data);
     }
 }
+exports.writeCallOutput = writeCallOutput;
 /**
  * The first rule set of SSTORE rules, which are the rules pre-Constantinople and in Petersburg
  */
@@ -213,6 +208,7 @@ function updateSstoreGas(runState, currentStorage, value, common) {
         return common.param('gasPrices', 'sstoreSet');
     }
 }
+exports.updateSstoreGas = updateSstoreGas;
 function mod(a, b) {
     let r = a % b;
     if (r < BigInt(0)) {
@@ -220,18 +216,22 @@ function mod(a, b) {
     }
     return r;
 }
+exports.mod = mod;
 function fromTwos(a) {
     return BigInt.asIntN(256, a);
 }
+exports.fromTwos = fromTwos;
 function toTwos(a) {
     return BigInt.asUintN(256, a);
 }
+exports.toTwos = toTwos;
 function abs(a) {
     if (a > 0) {
         return a;
     }
     return a * BigInt(-1);
 }
+exports.abs = abs;
 const N = BigInt(115792089237316195423570985008687907853269984665640564039457584007913129639936);
 function exponentation(bas, exp) {
     let t = BigInt(1);
@@ -244,4 +244,5 @@ function exponentation(bas, exp) {
     }
     return t;
 }
+exports.exponentation = exponentation;
 //# sourceMappingURL=util.js.map

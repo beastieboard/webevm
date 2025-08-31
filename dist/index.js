@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LocalEEI = exports.createWebEVM = exports.Message = exports.getActivePrecompiles = exports.EvmErrorMessage = exports.EvmError = exports.EVM = void 0;
+exports.Address = exports.LocalEEI = exports.createWebEVM = exports.Message = exports.getActivePrecompiles = exports.EvmErrorMessage = exports.EvmError = exports.EVM = void 0;
 const evm_1 = require("./evm");
 Object.defineProperty(exports, "EVM", { enumerable: true, get: function () { return evm_1.EVM; } });
 const exceptions_1 = require("./exceptions");
@@ -13,4 +13,6 @@ Object.defineProperty(exports, "getActivePrecompiles", { enumerable: true, get: 
 var web_1 = require("./web");
 Object.defineProperty(exports, "createWebEVM", { enumerable: true, get: function () { return web_1.createWebEVM; } });
 Object.defineProperty(exports, "LocalEEI", { enumerable: true, get: function () { return web_1.LocalEEI; } });
+var util_1 = require("@ethereumjs/util");
+Object.defineProperty(exports, "Address", { enumerable: true, get: function () { return util_1.Address; } });
 //# sourceMappingURL=index.js.map

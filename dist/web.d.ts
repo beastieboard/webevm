@@ -1,3 +1,5 @@
+/// <reference types="node" />
+/// <reference types="node" />
 import { Buffer } from 'buffer';
 import { Address, Account } from '@ethereumjs/util';
 import { EEIInterface } from './types';

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.precompile0b = precompile0b;
+exports.precompile0b = void 0;
 const evm_1 = require("../evm");
 const exceptions_1 = require("../exceptions");
 const { BLS12_381_ToG1Point, BLS12_381_FromG1Point, BLS12_381_ToFrPoint, } = require('./util/bls12_381');
@@ -43,4 +43,5 @@ function precompile0b(opts) {
         returnValue,
     };
 }
+exports.precompile0b = precompile0b;
 //# sourceMappingURL=0b-bls12-g1mul.js.map

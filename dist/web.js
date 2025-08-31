@@ -1,13 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LocalEEI = void 0;
-exports.createWebEVM = createWebEVM;
+exports.createWebEVM = exports.LocalEEI = void 0;
 const buffer_1 = require("buffer");
 const common_1 = require("@ethereumjs/common");
 const util_1 = require("@ethereumjs/util");
 const evm_1 = require("./evm");
 const common = new common_1.Common({
-    chain: common_1.Chain.Mainnet, // hardfork: Hardfork.Shanghai,
+    chain: common_1.Chain.Mainnet,
     eips: [1153, 1559, 2315, 2565, 2718, 2929, 2930, 3074, 3198, 3529, 3540, 3541, 3607, 3651, 3670, 3855, 3860, 4399, 5133]
 });
 class LocalEEI {
@@ -64,4 +63,5 @@ function createWebEVM() {
         eei: new LocalEEI()
     });
 }
+exports.createWebEVM = createWebEVM;
 //# sourceMappingURL=web.js.map

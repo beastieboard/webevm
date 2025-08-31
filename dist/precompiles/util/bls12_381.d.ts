@@ -1,3 +1,5 @@
+/// <reference types="node" />
+/// <reference types="node" />
 export declare const gasDiscountPairs: number[][];
 declare function BLS12_381_ToG1Point(input: Buffer, mcl: any): any;
 declare function BLS12_381_FromG1Point(input: any): Buffer;

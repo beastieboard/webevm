@@ -1,7 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ripemdPrecompileAddress = exports.precompiles = void 0;
-exports.getActivePrecompiles = getActivePrecompiles;
+exports.ripemdPrecompileAddress = exports.precompiles = exports.getActivePrecompiles = void 0;
 const common_1 = require("@ethereumjs/common");
 const util_1 = require("@ethereumjs/util");
 const _01_ecrecover_1 = require("./01-ecrecover");
@@ -143,4 +142,5 @@ function getActivePrecompiles(common, customPrecompiles) {
     }
     return precompileMap;
 }
+exports.getActivePrecompiles = getActivePrecompiles;
 //# sourceMappingURL=index.js.map

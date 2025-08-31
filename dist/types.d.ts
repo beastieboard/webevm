@@ -1,3 +1,5 @@
+/// <reference types="node" />
+/// <reference types="node" />
 import { EVM, EVMResult, ExecResult } from './evm';
 import { InterpreterStep } from './interpreter';
 import { Message } from './message';

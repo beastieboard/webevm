@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.precompile12 = precompile12;
+exports.precompile12 = void 0;
 const evm_1 = require("../evm");
 const exceptions_1 = require("../exceptions");
 const { BLS12_381_ToFp2Point, BLS12_381_FromG2Point } = require('./util/bls12_381');
@@ -43,4 +43,5 @@ function precompile12(opts) {
         returnValue,
     };
 }
+exports.precompile12 = precompile12;
 //# sourceMappingURL=12-bls12-map-fp2-to-g2.js.map

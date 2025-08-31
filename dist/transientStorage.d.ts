@@ -1,3 +1,5 @@
+/// <reference types="node" />
+/// <reference types="node" />
 import { TransientStorageInterface } from './types';
 import { Address } from '@ethereumjs/util';
 export declare class TransientStorage implements TransientStorageInterface {

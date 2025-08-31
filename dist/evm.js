@@ -1,12 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EVM = void 0;
-exports.OOGResult = OOGResult;
-exports.COOGResult = COOGResult;
-exports.INVALID_BYTECODE_RESULT = INVALID_BYTECODE_RESULT;
-exports.INVALID_EOF_RESULT = INVALID_EOF_RESULT;
-exports.CodesizeExceedsMaximumError = CodesizeExceedsMaximumError;
-exports.EvmErrorResult = EvmErrorResult;
+exports.EvmErrorResult = exports.CodesizeExceedsMaximumError = exports.INVALID_EOF_RESULT = exports.INVALID_BYTECODE_RESULT = exports.COOGResult = exports.OOGResult = exports.EVM = void 0;
 const common_1 = require("@ethereumjs/common");
 const util_1 = require("@ethereumjs/util");
 //import AsyncEventEmitter = require('async-eventemitter')
@@ -213,7 +207,7 @@ class EVM {
                 execResult: {
                     gasRefund: message.gasRefund,
                     executionGasUsed: BigInt(0),
-                    exceptionError: errorMessage, // Only defined if addToBalance failed
+                    exceptionError: errorMessage,
                     returnValue: Buffer.alloc(0),
                 },
             };
@@ -315,7 +309,7 @@ class EVM {
                 execResult: {
                     executionGasUsed: BigInt(0),
                     gasRefund: message.gasRefund,
-                    exceptionError: errorMessage, // only defined if addToBalance failed
+                    exceptionError: errorMessage,
                     returnValue: Buffer.alloc(0),
                 },
             };
@@ -738,6 +732,7 @@ function OOGResult(gasLimit) {
         exceptionError: new exceptions_1.EvmError(exceptions_1.ERROR.OUT_OF_GAS),
     };
 }
+exports.OOGResult = OOGResult;
 // CodeDeposit OOG Result
 function COOGResult(gasUsedCreateCode) {
     return {
@@ -746,6 +741,7 @@ function COOGResult(gasUsedCreateCode) {
         exceptionError: new exceptions_1.EvmError(exceptions_1.ERROR.CODESTORE_OUT_OF_GAS),
     };
 }
+exports.COOGResult = COOGResult;
 function INVALID_BYTECODE_RESULT(gasLimit) {
     return {
         returnValue: Buffer.alloc(0),
@@ -753,6 +749,7 @@ function INVALID_BYTECODE_RESULT(gasLimit) {
         exceptionError: new exceptions_1.EvmError(exceptions_1.ERROR.INVALID_BYTECODE_RESULT),
     };
 }
+exports.INVALID_BYTECODE_RESULT = INVALID_BYTECODE_RESULT;
 function INVALID_EOF_RESULT(gasLimit) {
     return {
         returnValue: Buffer.alloc(0),
@@ -760,6 +757,7 @@ function INVALID_EOF_RESULT(gasLimit) {
         exceptionError: new exceptions_1.EvmError(exceptions_1.ERROR.INVALID_EOF_FORMAT),
     };
 }
+exports.INVALID_EOF_RESULT = INVALID_EOF_RESULT;
 function CodesizeExceedsMaximumError(gasUsed) {
     return {
         returnValue: Buffer.alloc(0),
@@ -767,6 +765,7 @@ function CodesizeExceedsMaximumError(gasUsed) {
         exceptionError: new exceptions_1.EvmError(exceptions_1.ERROR.CODESIZE_EXCEEDS_MAXIMUM),
     };
 }
+exports.CodesizeExceedsMaximumError = CodesizeExceedsMaximumError;
 function EvmErrorResult(error, gasUsed) {
     return {
         returnValue: Buffer.alloc(0),
@@ -774,6 +773,7 @@ function EvmErrorResult(error, gasUsed) {
         exceptionError: error,
     };
 }
+exports.EvmErrorResult = EvmErrorResult;
 function defaultBlock() {
     return {
         header: {

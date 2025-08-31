@@ -1,3 +1,5 @@
+/// <reference types="node" />
+/// <reference types="node" />
 import { RunState } from '../interpreter';
 import { Common } from '@ethereumjs/common';
 import { Address } from '@ethereumjs/util';
