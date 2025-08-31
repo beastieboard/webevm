@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.updateSstoreGasEIP1283 = void 0;
+exports.updateSstoreGasEIP1283 = updateSstoreGasEIP1283;
 /**
  * Adjusts gas usage and refunds of SStore ops per EIP-1283 (Constantinople)
  *
@@ -54,5 +54,4 @@ function updateSstoreGasEIP1283(runState, currentStorage, originalStorage, value
     }
     return common.param('gasPrices', 'netSstoreDirtyGas');
 }
-exports.updateSstoreGasEIP1283 = updateSstoreGasEIP1283;
 //# sourceMappingURL=EIP1283.js.map

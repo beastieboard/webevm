@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getOpcodesForHF = exports.Opcode = void 0;
+exports.Opcode = void 0;
+exports.getOpcodesForHF = getOpcodesForHF;
 const common_1 = require("@ethereumjs/common");
 const functions_1 = require("./functions");
 const gas_1 = require("./gas");
@@ -181,7 +182,7 @@ const hardforkOpcodes = [
             0xf2: { name: 'CALLCODE', isAsync: true, dynamicGas: true },
             0x3b: { name: 'EXTCODESIZE', isAsync: true, dynamicGas: true },
             0x3c: { name: 'EXTCODECOPY', isAsync: true, dynamicGas: true },
-            0xf4: { name: 'DELEGATECALL', isAsync: true, dynamicGas: true },
+            0xf4: { name: 'DELEGATECALL', isAsync: true, dynamicGas: true }, // EIP 7
             0xff: { name: 'SELFDESTRUCT', isAsync: true, dynamicGas: true },
             0x31: { name: 'BALANCE', isAsync: true, dynamicGas: true },
         },
@@ -189,26 +190,26 @@ const hardforkOpcodes = [
     {
         hardfork: common_1.Hardfork.Byzantium,
         opcodes: {
-            0xfd: { name: 'REVERT', isAsync: false, dynamicGas: true },
-            0xfa: { name: 'STATICCALL', isAsync: true, dynamicGas: true },
-            0x3d: { name: 'RETURNDATASIZE', isAsync: true, dynamicGas: false },
+            0xfd: { name: 'REVERT', isAsync: false, dynamicGas: true }, // EIP 140
+            0xfa: { name: 'STATICCALL', isAsync: true, dynamicGas: true }, // EIP 214
+            0x3d: { name: 'RETURNDATASIZE', isAsync: true, dynamicGas: false }, // EIP 211
             0x3e: { name: 'RETURNDATACOPY', isAsync: true, dynamicGas: true }, // EIP 211
         },
     },
     {
         hardfork: common_1.Hardfork.Constantinople,
         opcodes: {
-            0x1b: { name: 'SHL', isAsync: false, dynamicGas: false },
-            0x1c: { name: 'SHR', isAsync: false, dynamicGas: false },
-            0x1d: { name: 'SAR', isAsync: false, dynamicGas: false },
-            0x3f: { name: 'EXTCODEHASH', isAsync: true, dynamicGas: true },
+            0x1b: { name: 'SHL', isAsync: false, dynamicGas: false }, // EIP 145
+            0x1c: { name: 'SHR', isAsync: false, dynamicGas: false }, // EIP 145
+            0x1d: { name: 'SAR', isAsync: false, dynamicGas: false }, // EIP 145
+            0x3f: { name: 'EXTCODEHASH', isAsync: true, dynamicGas: true }, // EIP 1052
             0xf5: { name: 'CREATE2', isAsync: true, dynamicGas: true }, // EIP 1014
         },
     },
     {
         hardfork: common_1.Hardfork.Istanbul,
         opcodes: {
-            0x46: { name: 'CHAINID', isAsync: false, dynamicGas: false },
+            0x46: { name: 'CHAINID', isAsync: false, dynamicGas: false }, // EIP 1344
             0x47: { name: 'SELFBALANCE', isAsync: false, dynamicGas: false }, // EIP 1884
         },
     },
@@ -331,5 +332,4 @@ function getOpcodesForHF(common, customOpcodes) {
         opcodes: createOpcodes(opcodeBuilder),
     };
 }
-exports.getOpcodesForHF = getOpcodesForHF;
 //# sourceMappingURL=codes.js.map

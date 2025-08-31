@@ -1,4 +1,3 @@
-/// <reference types="node" />
 import { EVM, EVMResult, ExecResult } from './evm';
 import { InterpreterStep } from './interpreter';
 import { Message } from './message';
@@ -47,17 +46,17 @@ export interface EVMStateAccess extends StateAccess {
     cleanupTouchedAccounts(): void;
     generateCanonicalGenesis(initState: any): void;
 }
-export declare type DeleteOpcode = {
+export type DeleteOpcode = {
     opcode: number;
 };
-export declare type AddOpcode = {
+export type AddOpcode = {
     opcode: number;
     opcodeName: string;
     baseFee: number;
     gasFunction?: AsyncDynamicGasHandler | SyncDynamicGasHandler;
     logicFunction: OpHandler;
 };
-export declare type CustomOpcode = AddOpcode | DeleteOpcode;
+export type CustomOpcode = AddOpcode | DeleteOpcode;
 /**
  * Options for running a call (or create) operation with `EVM.runCall()`
  */
@@ -205,7 +204,7 @@ interface NewContractEvent {
     address: Address;
     code: Buffer;
 }
-export declare type EVMEvents = {
+export type EVMEvents = {
     newContract: (data: NewContractEvent, resolve?: (result?: any) => void) => void;
     beforeMessage: (data: Message, resolve?: (result?: any) => void) => void;
     afterMessage: (data: EVMResult, resolve?: (result?: any) => void) => void;
@@ -214,7 +213,7 @@ export declare type EVMEvents = {
 /**
  * Log that the contract emits.
  */
-export declare type Log = [address: Buffer, topics: Buffer[], data: Buffer];
+export type Log = [address: Buffer, topics: Buffer[], data: Buffer];
 declare type AccessListItem = {
     address: PrefixedHexString;
     storageKeys: PrefixedHexString[];
@@ -234,7 +233,7 @@ declare type Proof = {
     accountProof: PrefixedHexString[];
     storageProof: StorageProof[];
 };
-declare type AccountFields = Partial<Pick<Account, 'nonce' | 'balance' | 'storageRoot' | 'codeHash'>>;
+type AccountFields = Partial<Pick<Account, 'nonce' | 'balance' | 'storageRoot' | 'codeHash'>>;
 interface StateAccess {
     accountExists(address: Address): boolean;
     getAccount(address: Address): Account;
@@ -256,7 +255,7 @@ interface StateAccess {
     verifyProof?(proof: Proof): boolean;
     hasStateRoot(root: Buffer): boolean;
 }
-export declare type Block = {
+export type Block = {
     header: {
         number: bigint;
         cliqueSigner(): Address;

@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.precompile05 = exports.expmod = void 0;
+exports.expmod = expmod;
+exports.precompile05 = precompile05;
 const util_1 = require("@ethereumjs/util");
 const evm_1 = require("../evm");
 function multComplexity(x) {
@@ -73,7 +74,6 @@ function expmod(a, power, modulo) {
     }
     return res;
 }
-exports.expmod = expmod;
 function precompile05(opts) {
     const data = opts.data;
     let adjustedELen = getAdjustedExponentLength(data);
@@ -142,5 +142,4 @@ function precompile05(opts) {
         returnValue: (0, util_1.setLengthLeft)((0, util_1.bigIntToBuffer)(R), Number(mLen)),
     };
 }
-exports.precompile05 = precompile05;
 //# sourceMappingURL=05-modexp.js.map

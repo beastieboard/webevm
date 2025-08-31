@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.precompile09 = exports.F = void 0;
+exports.F = F;
+exports.precompile09 = precompile09;
 const evm_1 = require("../evm");
 const exceptions_1 = require("../exceptions");
 // The following blake2 code has been taken from (license: Creative Commons CC0):
@@ -122,7 +123,6 @@ function F(h, m, t, f, rounds) {
         h[i] = h[i] ^ v[i] ^ v[i + 16];
     }
 }
-exports.F = F;
 function precompile09(opts) {
     const data = opts.data;
     if (data.length !== 213) {
@@ -173,5 +173,4 @@ function precompile09(opts) {
         returnValue: output,
     };
 }
-exports.precompile09 = precompile09;
 //# sourceMappingURL=09-blake2f.js.map

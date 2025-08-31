@@ -1,4 +1,3 @@
-/// <reference types="node" />
 import { ExecResult } from '../evm';
 import { EVMInterface } from '../types';
 import { Common } from '@ethereumjs/common';

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.precompile08 = void 0;
+exports.precompile08 = precompile08;
 const evm_1 = require("../evm");
 const bn128 = require('rustbn.js');
 function precompile08(opts) {
@@ -22,5 +22,4 @@ function precompile08(opts) {
         returnValue: returnData,
     };
 }
-exports.precompile08 = precompile08;
 //# sourceMappingURL=08-ecpairing.js.map

@@ -38,7 +38,7 @@ build_node() {
     echo "> tsc --build ./tsconfig.prod.json"
     printf "${BLUE}[Node build] Working... "
 
-    tsc --build ./tsconfig.prod.json
+    npx tsc --build ./tsconfig.prod.json
     green "DONE"
 
     echo "\n";
@@ -54,7 +54,7 @@ build_browser() {
         blue "[Browser build] "
         printf "Working... "
 
-        tsc -p ./tsconfig.browser.json
+        npx tsc -p ./tsconfig.browser.json
         RETURN_CODE=$?
 
         if [ $RETURN_CODE -eq 0 ]; then

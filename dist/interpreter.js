@@ -26,12 +26,12 @@ class Interpreter {
         this._common = this._evm._common;
         this._runState = {
             programCounter: 0,
-            opCode: 0xfe,
+            opCode: 0xfe, // INVALID opcode
             memory: new memory_1.Memory(),
             memoryWordCount: BigInt(0),
             highestMemCost: BigInt(0),
             stack: new stack_1.Stack(),
-            returnStack: new stack_1.Stack(1023),
+            returnStack: new stack_1.Stack(1023), // 1023 return stack height limit per EIP 2315 spec
             code: Buffer.alloc(0),
             validJumps: Uint8Array.from([]),
             eei: this._eei,

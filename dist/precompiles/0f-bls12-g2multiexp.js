@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.precompile0f = void 0;
+exports.precompile0f = precompile0f;
 const evm_1 = require("../evm");
 const exceptions_1 = require("../exceptions");
 const bls12_381_1 = require("./util/bls12_381");
@@ -71,5 +71,4 @@ function precompile0f(opts) {
         returnValue,
     };
 }
-exports.precompile0f = precompile0f;
 //# sourceMappingURL=0f-bls12-g2multiexp.js.map

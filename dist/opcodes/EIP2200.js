@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.updateSstoreGasEIP2200 = void 0;
+exports.updateSstoreGasEIP2200 = updateSstoreGasEIP2200;
 const exceptions_1 = require("../exceptions");
 const EIP2929_1 = require("./EIP2929");
 const util_1 = require("./util");
@@ -60,5 +60,4 @@ function updateSstoreGasEIP2200(runState, currentStorage, originalStorage, value
     // Dirty update
     return common.param('gasPrices', 'sstoreDirtyGasEIP2200');
 }
-exports.updateSstoreGasEIP2200 = updateSstoreGasEIP2200;
 //# sourceMappingURL=EIP2200.js.map

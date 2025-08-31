@@ -6,14 +6,14 @@ interface Precompiles {
 }
 declare const ripemdPrecompileAddress = "0000000000000000000000000000000000000003";
 declare const precompiles: Precompiles;
-declare type DeletePrecompile = {
+type DeletePrecompile = {
     address: Address;
 };
-declare type AddPrecompile = {
+type AddPrecompile = {
     address: Address;
     function: PrecompileFunc;
 };
-declare type CustomPrecompile = AddPrecompile | DeletePrecompile;
+type CustomPrecompile = AddPrecompile | DeletePrecompile;
 declare function getActivePrecompiles(common: Common, customPrecompiles?: CustomPrecompile[]): Map<string, PrecompileFunc>;
 export { AddPrecompile, CustomPrecompile, DeletePrecompile, getActivePrecompiles, PrecompileFunc, PrecompileInput, precompiles, ripemdPrecompileAddress, };
 //# sourceMappingURL=index.d.ts.map

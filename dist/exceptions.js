@@ -33,7 +33,7 @@ var ERROR;
     ERROR["BLS_12_381_POINT_NOT_ON_CURVE"] = "point not on curve";
     ERROR["BLS_12_381_INPUT_EMPTY"] = "input is empty";
     ERROR["BLS_12_381_FP_NOT_IN_FIELD"] = "fp point not in field";
-})(ERROR = exports.ERROR || (exports.ERROR = {}));
+})(ERROR || (exports.ERROR = ERROR = {}));
 class EvmError {
     constructor(error) {
         this.error = error;

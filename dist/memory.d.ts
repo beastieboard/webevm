@@ -1,4 +1,3 @@
-/// <reference types="node" />
 /**
  * Memory implements a simple memory model
  * for the ethereum virtual machine.

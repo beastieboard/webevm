@@ -18,3 +18,4 @@ export {
   Log,
   Message,
 }
+export { createWebEVM, LocalEEI } from './web'

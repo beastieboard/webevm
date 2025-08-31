@@ -1,4 +1,3 @@
-/// <reference types="node" />
 import { Common } from '@ethereumjs/common';
 import { Address } from '@ethereumjs/util';
 import { EvmError } from './exceptions';

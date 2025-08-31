@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.precompile04 = void 0;
+exports.precompile04 = precompile04;
 const evm_1 = require("../evm");
 function precompile04(opts) {
     const data = opts.data;
@@ -14,5 +14,4 @@ function precompile04(opts) {
         returnValue: data,
     };
 }
-exports.precompile04 = precompile04;
 //# sourceMappingURL=04-identity.js.map

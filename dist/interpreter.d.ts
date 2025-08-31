@@ -1,4 +1,3 @@
-/// <reference types="node" />
 import { EvmError } from './exceptions';
 import { Memory } from './memory';
 import { Message } from './message';
@@ -111,7 +110,7 @@ export declare class Interpreter {
      */
     lookupOpInfo(op: number): Opcode;
     _runStepHook(dynamicFee: bigint, gasLeft: bigint): void;
-    _getValidJumpDests(code: Buffer): Uint8Array;
+    _getValidJumpDests(code: Buffer): Uint8Array<ArrayBuffer>;
     /**
      * Logic extracted from EEI
      */

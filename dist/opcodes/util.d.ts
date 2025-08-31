@@ -1,4 +1,3 @@
-/// <reference types="node" />
 import { RunState } from '../interpreter';
 import { Common } from '@ethereumjs/common';
 /**

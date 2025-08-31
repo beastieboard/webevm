@@ -1,6 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.adjustSstoreGasEIP2929 = exports.accessStorageEIP2929 = exports.accessAddressEIP2929 = void 0;
+exports.accessAddressEIP2929 = accessAddressEIP2929;
+exports.accessStorageEIP2929 = accessStorageEIP2929;
+exports.adjustSstoreGasEIP2929 = adjustSstoreGasEIP2929;
 /**
  * Adds address to accessedAddresses set if not already included.
  * Adjusts cost incurred for executing opcode based on whether address read
@@ -31,7 +33,6 @@ function accessAddressEIP2929(runState, address, common, chargeGas = true, isSel
     }
     return BigInt(0);
 }
-exports.accessAddressEIP2929 = accessAddressEIP2929;
 /**
  * Adds (address, key) to accessedStorage tuple set if not already included.
  * Adjusts cost incurred for executing opcode based on whether storage read
@@ -56,7 +57,6 @@ function accessStorageEIP2929(runState, key, isSstore, common) {
     }
     return BigInt(0);
 }
-exports.accessStorageEIP2929 = accessStorageEIP2929;
 /**
  * Adjusts cost of SSTORE_RESET_GAS or SLOAD (aka sstorenoop) (EIP-2200) downward when storage
  * location is already warm
@@ -86,5 +86,4 @@ function adjustSstoreGasEIP2929(runState, key, defaultCost, costName, common) {
     }
     return defaultCost;
 }
-exports.adjustSstoreGasEIP2929 = adjustSstoreGasEIP2929;
 //# sourceMappingURL=EIP2929.js.map

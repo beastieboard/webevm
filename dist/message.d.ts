@@ -1,4 +1,3 @@
-/// <reference types="node" />
 import { Address } from '@ethereumjs/util';
 import { PrecompileFunc } from './precompiles';
 interface MessageOpts {
@@ -61,6 +60,6 @@ export declare class Message {
      */
     get codeAddress(): Address;
 }
-export declare type MessageWithTo = Message & Pick<Required<MessageOpts>, 'to'>;
+export type MessageWithTo = Message & Pick<Required<MessageOpts>, 'to'>;
 export {};
 //# sourceMappingURL=message.d.ts.map

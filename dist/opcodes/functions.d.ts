@@ -6,6 +6,6 @@ export interface SyncOpHandler {
 export interface AsyncOpHandler {
     (runState: RunState, common: Common): void;
 }
-export declare type OpHandler = SyncOpHandler | AsyncOpHandler;
+export type OpHandler = SyncOpHandler | AsyncOpHandler;
 export declare const handlers: Map<number, OpHandler>;
 //# sourceMappingURL=functions.d.ts.map

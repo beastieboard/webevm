@@ -18,8 +18,8 @@ export declare class Opcode {
         dynamicGas: boolean;
     });
 }
-export declare type OpcodeList = Map<number, Opcode>;
-declare type OpcodeContext = {
+export type OpcodeList = Map<number, Opcode>;
+type OpcodeContext = {
     dynamicGasHandlers: Map<number, AsyncDynamicGasHandler | SyncDynamicGasHandler>;
     handlers: Map<number, OpHandler>;
     opcodes: OpcodeList;

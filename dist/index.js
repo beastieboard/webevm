@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Message = exports.getActivePrecompiles = exports.EvmErrorMessage = exports.EvmError = exports.EVM = void 0;
+exports.LocalEEI = exports.createWebEVM = exports.Message = exports.getActivePrecompiles = exports.EvmErrorMessage = exports.EvmError = exports.EVM = void 0;
 const evm_1 = require("./evm");
 Object.defineProperty(exports, "EVM", { enumerable: true, get: function () { return evm_1.EVM; } });
 const exceptions_1 = require("./exceptions");
@@ -10,4 +10,7 @@ const message_1 = require("./message");
 Object.defineProperty(exports, "Message", { enumerable: true, get: function () { return message_1.Message; } });
 const precompiles_1 = require("./precompiles");
 Object.defineProperty(exports, "getActivePrecompiles", { enumerable: true, get: function () { return precompiles_1.getActivePrecompiles; } });
+var web_1 = require("./web");
+Object.defineProperty(exports, "createWebEVM", { enumerable: true, get: function () { return web_1.createWebEVM; } });
+Object.defineProperty(exports, "LocalEEI", { enumerable: true, get: function () { return web_1.LocalEEI; } });
 //# sourceMappingURL=index.js.map

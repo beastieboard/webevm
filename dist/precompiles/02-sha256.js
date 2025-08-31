@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.precompile02 = void 0;
+exports.precompile02 = precompile02;
 const util_1 = require("@ethereumjs/util");
 const sha256_1 = require("ethereum-cryptography/sha256");
 const evm_1 = require("../evm");
@@ -16,5 +16,4 @@ function precompile02(opts) {
         returnValue: (0, util_1.toBuffer)((0, sha256_1.sha256)(data)),
     };
 }
-exports.precompile02 = precompile02;
 //# sourceMappingURL=02-sha256.js.map

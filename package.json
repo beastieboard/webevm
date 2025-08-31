@@ -56,7 +56,8 @@
     "memory-level": "^1.0.0",
     "minimist": "^1.2.5",
     "node-dir": "^0.1.17",
-    "solc": "^0.8.1"
+    "solc": "^0.8.1",
+    "typescript": "^4.9.3"
   },
   "engines": {
     "node": ">=14"
